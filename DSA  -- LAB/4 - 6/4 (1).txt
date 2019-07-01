@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int binary_search(int a[],int low,int high,int x)
+{
+    int mid;
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+        if(a[mid]==x)
+            return 1;
+        else if(a[mid]>x)
+            high=mid-1;
+        else
+            low=mid+1;
+    }
+    return -1;
+}
+int ternary_search(int a[],int left,int right,int x)
+{
+    int first,second,i;
+    i=(right-left)/3;
+    first=i+left-1;
+    second=(i*2)+left-1;
+    if(a[first]==x)
+        return 1;
+    if(a[first]>x)
+        return ternary_search(a,left,first-1,x);
+    else
+    {
+        if(a[second]==x)
+            return 1;
+        else if(a[second]<x)
+            return ternary_search(a,second+1,right,x);
+        else if(x>a[first] && x<a[second])
+            return ternary_search(a,first+1,second-1,x);
+    }
+
+        return -1;
+}
+int main()
+{
+    clock_t s1,e1,s2,e2;
+    time_t t;
+    int n,x;
+    scanf("%d %d",&n,&x);
+    int a[n];
+    int i,j;
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+
+    s1=clock();
+    int ans1=binary_search(a,0,n-1,x);
+    e1=clock();
+    s2=clock();
+
+    int ans2=ternary_search(a,0,n-1,x);
+    //printf("-1\n");
+    e2=clock();
+    printf("bs:%.41lf\nts:%.40lf",(double)((e1-s1)/CLOCKS_PER_SEC),(double)((e2-s2)/CLOCKS_PER_SEC));
+    return 0;
+}

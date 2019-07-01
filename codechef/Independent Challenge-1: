@@ -1,0 +1,503 @@
+Independent Challenge-1:
+
+Code:
+
+Independent Challenge-1:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Spotted Wren Garden Center</title>
+
+<style>
+
+h1{
+
+background-color:coral;
+
+text-align:center;
+
+}
+
+p{
+
+text-align:center;
+
+}
+
+footer
+
+{
+
+background-color:yellow;
+
+text-align:center;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Spotted Wren Garden Center</h1>
+
+<p> 'Enter the paragraph text here.'</p>
+
+<p>'Enter the paragraph text here.</p>
+
+<footer>'Enter the footer text here.</footer>
+
+</body>
+
+</html>
+
+Spotted Wren Garden Center
+
+Independent Challenge-2:
+
+Code:
+
+1) Index.html:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Murfreesboro Regional Soccer Leauge</title>
+
+<link rel="stylesheet" href = "styles.css">
+
+</head>
+
+<body>
+
+<h1>Murfreesboro Regional Soccer Leauge</h1>
+
+<article> 'Please enter the article text here' </article>
+
+<article>'Please enter the article text here'</article>
+
+<article>'Please enter the article text here'</article>
+
+</body>
+
+<footer>
+
+<p>'Please enter the suitable paragraph text here'</p>
+
+<p>'Please enter the suitable paragraph text here'</p>
+
+</footer>
+
+</html>
+
+2. styles.css:
+
+/*
+
+Murfreesboro Regional Soccer Leauge style sheet
+
+filename : styles.css
+
+firstname : sharath
+
+lastname : golluri
+
+date: 10-09-2018
+
+*/
+
+h1,article{
+
+/*
+
+Murfreesboro Regional Soccer Leauge style sheet
+
+filename : styles.css
+
+firstname : sharath
+
+lastname : golluri
+
+date: 10-09-2018
+
+*/
+
+h1,article{
+
+text-align:center;
+
+}
+
+h1{
+
+background-color:coral;
+
+}
+
+footer
+
+{
+
+background-color:green;
+
+color:white;
+
+}
+
+footer>p{
+
+text-align:right;
+
+}
+
+text-align:center;
+
+}
+
+h1{
+
+background-color:coral;
+
+}
+
+footer
+
+{
+
+background-color:green;
+
+color:white;
+
+}
+
+footer>p{
+
+text-align:right;
+
+}
+
+3. index_embedded.html:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Murfreesboro Regional Soccer Leauge</title>
+
+<style>
+
+h1,article{
+
+text-align:center;
+
+}
+
+h1{
+
+background-color:coral;
+
+}
+
+footer
+
+{
+
+background-color:green;
+
+color:white;
+
+}
+
+footer>p{
+
+text-align:right;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Murfreesboro Regional Soccer Leauge</h1>
+
+<article>'Please enter the article text here'</article>
+
+<article>'Please enter the article text here'</article>
+
+<article>'Please enter the article text here'</article>
+
+</body>
+
+<footer>
+
+<p>'Please enter the suitable paragraph here'</p>Independent Challenge-1:
+
+<p>'Please enter the suitable paragraph here'</p>
+
+</footer>
+
+</html>
+
+Independent Challenge-3:
+
+Code:
+
+1. index.html:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Hotel Natoma</title>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Hotel Natoma</title>
+
+<link rel = "stylesheet" href = "./styles.css">
+
+</head>
+
+<body>
+
+<h1>Hotel Natoma</h1>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+</body>
+
+<footer>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+</footer>
+
+</html>
+
+2. nearby.html:
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Hotel Natoma</title>
+
+<link rel = "stylesheet" href = "./styles.css">
+
+</head>
+
+<body>
+
+<h1>Hotel Natoma</h1>
+
+<h2>What's Nearby</h2>
+
+<p>Asian art Museum</p>
+
+<p>City Hall</p>
+
+<p>City Hall</p>
+
+<p>City Hall</p>
+
+<p>City Hall</p>
+
+</body>
+
+<footer>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+<p>'Please enter the suitable paragraph here'</p>
+
+</footer>
+
+</html>
+
+3. styles.css:
+
+/*
+
+Hotel Natoma
+
+filename:styles.css
+
+firstname:sharath
+
+lastname:golluri
+
+date:10-09-2018
+
+HTML5 and CSS3 Illustrated Unit C,Independent Challenge 3
+
+
+
+*/
+
+h1
+
+{
+
+background-color: darkgreen;
+
+color:white;
+
+}
+
+p,h2{
+
+text-align:center;
+
+}
+
+footer{
+
+background-color:darkseagreen;
+
+}
+
+footer > p{
+
+text-align:right;
+
+}
+
+Indepedent Challenge-4
+
+1. index.html:
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title></title>
+
+<link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<header>
+
+<h1>Eating well in Season</h1>
+
+</header>
+
+<body>
+
+<h2>Meals</h2>
+
+<p>Meals prepared fresh daily using local ingrediants</p>
+
+<h2>Sources</h2>
+
+<p>Meals prepared fresh daily using local ingrediants</p>
+
+<h2>Schedule</h2>
+
+<p>Meals prepared fresh daily using local ingrediants</p>
+
+</body>
+
+<footer>
+
+<p id ="text">Eating well in Season</p>
+
+<p>Glover, VT</p>
+
+<p>(802)525-3947</p>
+
+</footer>
+
+</html>
+
+
+
+2. styles.css:
+
+
+
+/*
+
+Eating well in Season style sheet
+
+filename:styles.css
+
+firstname:sharath
+
+lastname:golluri
+
+date:10-09-2018
+
+HTML5 and CSS3 Illustrated Unit C,Independent Challenge 4
+
+
+
+*/
+
+
+
+header,footer{
+
+background-color:olive;
+
+color:floralwhite;
+
+}
+
+h1{
+
+color:khaki;
+
+}
+
+h2
+
+{
+
+background-color:khaki;
+
+}
+
+footer #text
+
+{
+
+color:khaki;
+
+}
+
+footer>p{
+
+text-align:right;
+
+}

@@ -1,0 +1,69 @@
+#include<stdio.h>
+typedef long long int lli;
+void printday(int x)
+{
+         if(x==0)  printf("Sunday");
+    else if(x==1)  printf("Monday");
+    else if(x==2)  printf("Tuesday");
+    else if(x==3)  printf("Wednesday");
+    else if(x==4)  printf("Thursday");
+    else if(x==5)  printf("Friday");
+    else if(x==6)  printf("Saturday");
+}
+int getdays(int year,int month)
+{
+    if(month==1 ||month==3 ||month==5 ||month==7 ||month==8 ||month==12 ||month==10 )
+        return 31;
+    else if(month==2)
+    {
+        if(year%4) return 28;
+        else       return 29;
+    }
+    else
+        return 30;
+}
+void printmonth(int x)
+{
+        if(x==1)     printf("Jan ");
+    else if(x==2)    printf("Feb ");
+    else if(x==3)    printf("Mar ");
+    else if(x==4)    printf("Apr ");
+    else if(x==5)    printf("May ");
+    else if(x==6)    printf("Jun ");
+    else if(x==7)    printf("Jul ");
+    else if(x==8)    printf("Aug ");
+    else if(x==9)    printf("Sep ");
+    else if(x==10)    printf("Oct ");
+    else if(x==11)    printf("Nov ");
+    else if(x==12)    printf("Dec ");
+}
+int main()
+{
+    int year,day;
+    scanf("%d %d",&year,&day);
+    int i,j,k;
+    lli days=0;
+    for(i=1900;i<year;i++)
+    {
+        if(i%100==0 && i%400==0)
+            days+=366;
+        else if(i%4!=0)
+            days+=365;
+        else
+            days+=366;
+    }
+    days+=day;
+    for(i=1;i<=12;i++)
+    {
+        k=getdays(year,i);
+        if(day<=k)
+            break;
+        else
+            day-=k;
+
+    }
+    printmonth(i);
+    printf("%d, ",day);
+    printday(days%7);
+    return 0;
+}

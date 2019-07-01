@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+#define true 1
+#define ll long long int
+#define loop(i,a,b) int i;for(i=a;i<=b;i++)
+#define INF 0x3f3f3f3f
+#define INFL 0x3f3f3f3f3f3f3f3fLL
+#define c_b true
+
+void eq(ll q[],ll* f,ll* e,ll data){
+    if((*f)==-1 || *f==*e){
+        *f=*e=0;
+    }
+    q[(*e)]=data;
+    (*e)++;
+}
+
+ll dq(ll q[],ll* f,ll* e){
+    if(*f==*e){
+        printf("Underflow ");
+        //exit(0);
+        return INFL;
+    }
+    return q[(*f)++];
+}
+
+int main()
+{
+    ll choice,val;
+    ll q1[1001],q2[1001];
+    ll f1=-1,e1=-1,f2=-1,e2=-1;
+    while(c_b){
+        scanf("%lld",&choice);
+        if(choice==1){
+            scanf("%lld",&val);
+            eq(q1,&f1,&e1,val);
+        }else if(choice==2){
+            while(f1<e1-1){
+                eq(q2,&f2,&e2,dq(q1,&f1,&e1));
+            }
+            printf("%lld\n",dq(q1,&f1,&e1));
+            while(f2<e2){
+                eq(q1,&f1,&e1,dq(q2,&f2,&e2));    
+            }
+        }else if(choice==3){
+            printf("queue1 = ");
+            loop(i,f1,e1-1){
+                printf("%lld -->",q1[i]);
+            }
+            printf("SHRI\nqueue2 = ");
+            loop(j,f2,e2-1){
+                printf("%lld -->",q2[j]);
+            }
+            printf("SHRI\n");
+        }else{
+            break;
+        }
+    }
+    
+    return 0;
+}

@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int main(int n,char argv[])
+{
+    char a[100];
+    scanf("%s",a);
+    char path[100];
+    FILE *f;
+     f=fopen(path,"r");
+     int count=1;
+     int i,j=0,k;
+     char s[100];
+     char *c;
+     char ch;
+     while(1)
+     {
+         ch=fgetc(f);
+         if(ch=='\n')
+            j++;
+            if(ch==EOF)
+                break;
+     }
+    j++;
+    //printf("%d",j);
+    fclose(f);
+    f=fopen("S:\\Study\\DSA\\Assignments\\3\\test.txt","r");
+    if(strcmp(argv[1],"-x"))
+    while(j--)
+    {
+        c=strstr(fgets(s,100,f),a);
+
+
+           if(c!=NULL)
+                printf("%d  %s\n",count,s);
+
+
+        count++;
+    }
+    else
+
+    {
+        c=strstr(fgets(s,100,f),a);
+
+
+           if(c!=NULL)
+                printf("%d  %s\n",count,s);
+
+
+        count++;
+    }
+   return(0);
+}

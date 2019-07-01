@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<stdlib.h>
+void swap(int *a,int *b)
+{
+    int t=(*a);
+    (*a)=(*b);
+    (*b)=t;
+}
+void quickSort(int a[],int low,int high)
+{
+    int pi;
+    if(low<high)
+    {
+        pi=partition(a,low,high);
+
+        quickSort(a,low,pi-1);
+        quickSort(a,pi+1,high);
+    }
+    return;
+}
+int partition(int a[],int low,int high)
+{
+    int pivot=a[high];
+    int i=(low-1),j;
+    for(j=low;j<=high-1;j++)
+    {
+        if(a[j]<=pivot)
+            {
+                i++;
+                swap(&a[i],&a[j]);
+            }
+    }
+    swap(&a[i+1],&a[high]);
+    return (i+1);
+}
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n,k;
+        scanf("%d %d",&n,&k);
+        int a[n];
+        int i,j;
+        for(i=0;i<n;i++)
+            scanf("%d",&a[i]);
+            quickSort(a,0,n-1);
+        int low=0,high=10000000;
+        int ans=-1;
+        while(low<high)
+        {
+            int last_pos=a[0],ppl=1,flag=0;
+            int mid=(low+high)/2;
+            for(i=1;i<n;i++)
+            {
+                if(a[i]-last_pos>=mid)
+                {
+
+                    ppl++;
+                    if(ppl==k)
+                    {
+                        flag=1;
+                        break;
+                    }
+                    last_pos=a[i];
+                }
+            }
+            if(flag==1)
+            {
+                low=mid+1;
+                ans=mid;
+            }
+            else
+                high=mid;
+        }
+        printf("%d\n",ans);
+    }
+
+    return 0;
+}

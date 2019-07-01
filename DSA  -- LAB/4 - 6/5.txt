@@ -1,0 +1,37 @@
+#include<stdio.h>
+int binsrch(int a[],int low,int high,int x)
+{
+    int mid;
+
+        mid=(low+high)/2;
+        if(a[mid]==x)
+            return 1;
+         if(a[low]<=a[mid])
+        {
+            if(x>=a[low] && x<=a[mid])
+                return binsrch(a,low,mid-1,x);
+            else
+                return binsrch(a,mid+1,high,x);
+
+        }
+        if(x>=a[mid] && x<=a[high])
+            return binsrch(a,mid+1,high,x);
+        else
+            return binsrch(a,low,mid-1,x);
+
+
+}
+///3,4,5,1,2
+int main()
+{
+    int n,x;
+    scanf("%d %d",&n,&x);
+    int i,j,k,a[n];
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    if(binsrch(a,0,n-1,x))
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}

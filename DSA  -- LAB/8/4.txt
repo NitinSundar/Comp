@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+#define true 1
+#define ll long long int
+#define loop(i,a,b) int i;for(i=a;i<=b;i++)
+#define loopd(i,a,b) int i;for(i=a;i>=b;i--)
+#define INF 0x3f3f3f3f
+#define INFL 0x3f3f3f3f3f3f3f3fLL
+#define c_b true
+
+int  Qi[10001];
+int qfront=500,qend=500;
+
+int empty(){
+    if(qfront==qend)    return c_b;
+    return 0;
+}
+
+int front(){
+    return Qi[qfront];
+}
+
+int back(){
+    return Qi[qend-1];
+}
+
+int pop_back(){
+    if(qfront!=qend){
+        return Qi[qend--];
+    }
+    return INFL;
+}
+
+void push_back(int x){
+    Qi[qend++]=x;
+}
+
+void push_front(int x){
+    Qi[--qfront]=x;
+}
+
+int pop_front(){
+    if(qfront!=qend){
+        return Qi[qfront++];
+    }
+    return -INFL;
+}
+
+void printKMax(int arr[], int n, int k)
+{
+    int i;
+    for (i = 0; i < k; ++i)
+    {
+        while ( (!empty()) && arr[i] >= arr[back()])
+            pop_back();
+        push_back(i);
+    }
+    for (;i<n;++i)
+    {
+        printf("%d ",arr[front()]);
+        while ( (!empty()) && front() <= i - k)
+            pop_front();
+        while ( (!empty()) && arr[i] >= arr[back()])
+            pop_back();
+        push_back(i);
+    }
+    printf("%d",arr[front()]);
+}
+
+int main()
+{   
+    int arr[] = {12, 1, 78, 90, 57, 89, 56};
+    int n = 7;
+    int k = 3;
+    printKMax(arr, n, k);
+    return 0;
+}

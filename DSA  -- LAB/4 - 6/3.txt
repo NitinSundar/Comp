@@ -1,0 +1,27 @@
+#include<stdio.h>
+int i,j,k,n;
+int findPeak(int a[],int low,int high)
+{
+    int mid;
+
+    while(low<=high)
+    {
+        mid=(low+high)/2;
+        if((mid==0 || (a[mid]>=a[mid+1])) &&( mid==n-1 || a[mid]>=a[mid-1]))
+            return mid;
+        else if(mid>0 && a[mid+1]>a[mid])
+           return findPeak(a,mid+1,high);
+        else
+            return findPeak(a,low,mid-1);
+    }
+}
+int main()
+{
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+        scanf("%d",&a[i]);
+    int k=findPeak(a,0,n-1);
+    printf("%d",a[k]);
+    return 0;
+}

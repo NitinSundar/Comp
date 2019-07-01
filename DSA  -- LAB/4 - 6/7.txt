@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<string.h>
+void swap(char *a,char *b)
+{
+    char t=(*a);
+    (*a)=(*b);
+    (*b)=t;
+}
+void quickSort(char a[],int low,int high)
+{
+    int pi;
+    if(low<high)
+    {
+        pi=partition(a,low,high);
+
+        quickSort(a,low,pi-1);
+        quickSort(a,pi+1,high);
+    }
+    return;
+}
+int partition(char a[],int low,int high)
+{
+    char pivot=a[high];
+    int i=(low-1),j;
+    for(j=low;j<=high-1;j++)
+    {
+        if(a[j]<=pivot)
+            {
+                i++;
+                swap(&a[i],&a[j]);
+            }
+    }
+    swap(&a[i+1],&a[high]);
+    return (i+1);
+}
+int findmin(char a[],int l,int i)
+{
+    int j,k=i;
+    char min=a[i];
+    for(j=i+1;j<l;j++)
+    {
+        if(min<a[j] && a[i]<a[j])
+        {
+
+            k=j;
+        }
+    }
+    if(i!=k)
+    {
+        swap(&a[i],&a[k]);
+        return 1;
+    }
+    return 0;
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    while(n--)
+    {
+    char a[1000];
+    scanf("%s",a);
+    int flag=-1;
+    int i,j,k;
+    int l=strlen(a);
+    for(i=l-2;i>=0;i--)
+    {
+       if(findmin(a,l,i))
+       {
+
+           break;
+       }
+    }
+    if(i==-1)
+        printf("game terminated\n");
+    else
+    {
+       quickSort(a,i+1,l-1);
+       printf("%s\n",a);
+    }
+    }
+    return 0;
+}

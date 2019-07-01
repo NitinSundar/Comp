@@ -1,0 +1,66 @@
+#include <stdio.h>
+
+#define true 1
+#define ll long long int
+#define loop(i,a,b) int i;for(i=a;i<=b;i++)
+#define INF 0x3f3f3f3f
+#define INFL 0x3f3f3f3f3f3f3f3fLL
+#define c_b true
+
+ll s[1001],stop=-1;
+
+void push(ll data){
+    s[++stop]=data;
+}
+
+ll pop(){
+    return s[stop--];
+}
+
+ll top(){
+    return s[stop];
+}
+
+ll empty(){
+    if(stop==-1)
+        return 1;
+    return 0;
+}
+
+ll solve(ll hist[], ll n)
+{
+    ll max_area = 0; 
+    ll tp; 
+    ll area_top;
+    ll i = 0;
+    while (i < n)
+    {
+        if (empty() || hist[top()] <= hist[i]){
+            push(i++);
+        }else{
+            tp = top();  
+            pop();
+            area_top = hist[tp] * (empty() ? i : i - top() - 1);
+            if (max_area < area_top)
+                max_area = area_top;
+        }
+    }
+    while (empty() == 0)
+    {
+        tp = top();
+        pop();
+        area_top = hist[tp] * (empty() ? i : i - top() - 1);
+        if (max_area < area_top)
+            max_area = area_top;
+    }
+    return max_area;
+}
+ 
+
+int main()
+{
+    ll hist[] = {2,2,3,4,1};
+    ll n = 5;
+    printf("Maximum area is %lld",solve(hist, n));
+    return 0;
+}
