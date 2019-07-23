@@ -28,26 +28,11 @@ int main()
             cur=cur*10;
             cur%=n;
         }
-       // cout<<k;
-        vector<int> v(n,0);
-        for(int i=0;i<n;i+=2){
-            if(k){
-                v[i] = 1;
-                k--;
-            }
-        }
-        for(int i=1;i<n;i+=2){
-            if(k){
-                v[i] = 1;
-                k--;
-            }
-        }
-        int ans=0;
-        for(int i=1;i<n;i++)
-            ans+=abs((v[i]-v[i-1]));
-        cout<<ans<<endl;
+       lli a = k, b = n - k;
+       if(a<b) cout<<a+a;
+       else if(b<a) cout<<b+b;
+       else cout<<a+a-1;
+       cout<<endl;
     }
     return 0;
 }
-
-
